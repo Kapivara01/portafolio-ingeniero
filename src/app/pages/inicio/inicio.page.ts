@@ -10,9 +10,9 @@ import {
 import { RouterModule } from '@angular/router'; 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-inicio',
+  templateUrl: './inicio.page.html',
+  styleUrls: ['./inicio.page.scss'],
   standalone: true,
   imports: [
     IonHeader, 
@@ -24,6 +24,6 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
 })
-export class HomePage {
+export class InicioPage {
   constructor() {}
 }

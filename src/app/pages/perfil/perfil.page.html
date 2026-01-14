@@ -1,0 +1,75 @@
+<ion-header shadow="true">
+  <ion-toolbar color="primary" style="--min-height: 90px;">
+    <ion-buttons slot="start">
+      <div class="logo-box">
+        <img src="assets/icon/colegio.png" alt="Logo Colegio">
+      </div>
+    </ion-buttons>
+
+    <ion-title>
+      <div class="nav-container">
+        <a routerLink="/home" class="nav-link">Inicio</a>
+        <a routerLink="/inicio" class="nav-link">IA Motor</a>
+        <a routerLink="/perfil" class="nav-link active">Perfil</a>
+        <a routerLink="/portafolio" class="nav-link">Portafolio</a>
+      </div>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <div class="logo-box">
+        <img src="assets/icon/universidad.png" alt="Logo Universidad">
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="max-width: 800px; margin: 0 auto;">
+    
+    <div style="text-align: center; margin: 30px 0;">
+      <h1 style="font-weight: 800; color: #222; letter-spacing: 1px;">PERFIL PROFESIONAL</h1>
+      <div style="width: 100px; height: 4px; background: #3880ff; margin: 10px auto; border-radius: 10px;"></div>
+    </div>
+
+    <ion-card style="margin-bottom: 25px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.08);">
+      <ion-card-content style="font-size: 1.2rem; line-height: 1.8; color: #333; text-align: justify;">
+        <p>
+          <strong>Ingeniero en Telecomunicaciones</strong> con una trayectoria destacada en la planificación y ejecución de infraestructuras críticas de conectividad. Mi enfoque profesional combina la solidez de la ingeniería tradicional con la vanguardia tecnológica, especializándome en la arquitectura de <strong>Redes GPON</strong> y la integración de soluciones de <strong>Inteligencia Artificial</strong> para la optimización de procesos.
+        </p>
+        <p style="margin-top: 15px;">
+          Experto en la gestión de proyectos bajo metodologías ágiles, garantizando el éxito mediante el control riguroso de <strong>fases y sprints</strong>. Mi objetivo es transformar desafíos técnicos en ventajas competitivas, asegurando sistemas robustos, escalables y eficientes.
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px;">
+      <ion-badge color="primary" style="padding: 12px; font-size: 0.9rem;">Redes Convergentes</ion-badge>
+      <ion-badge color="primary" style="padding: 12px; font-size: 0.9rem;">Modelado de IA</ion-badge>
+      <ion-badge color="primary" style="padding: 12px; font-size: 0.9rem;">Gestión Ágil (Scrum)</ion-badge>
+      <ion-badge color="tertiary" style="padding: 12px; font-size: 0.9rem;">Redes GPON / FTTH</ion-badge>
+    </div>
+
+    <div style="background: #ffffff; padding: 30px; border-radius: 20px; border: 1px solid #e0e0e0; text-align: center;">
+      <h3 style="font-weight: bold; margin-bottom: 20px;">Contacto y Documentación</h3>
+      
+      <ion-button expand="block" color="success" style="--border-radius: 10px; height: 50px; margin-bottom: 15px;" href="assets/archivo_x.pdf" download="CV_Jorge_Linares.pdf">
+        <ion-icon name="download-outline" slot="start"></ion-icon>
+        Descargar Hoja de Vida Completa
+      </ion-button>
+
+      <ion-button expand="block" fill="outline" style="--border-radius: 10px; height: 50px;" (click)="enviarCorreo()">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        Solicitar Entrevista Técnica
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer shadow="true">
+  <ion-toolbar color="light">
+    <p style="text-align: center; font-size: 0.85rem; margin: 12px 0; color: #555;">
+      © 2026 Jorge Luis Linares - Especialista en Telecomunicaciones e IA
+    </p>
+  </ion-toolbar>
+</ion-footer>

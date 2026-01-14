@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header shadow="true">
   <ion-toolbar color="primary" style="--min-height: 90px;">
     <ion-buttons slot="start">
       <div class="logo-box">
@@ -8,8 +8,8 @@
 
     <ion-title>
       <div class="nav-container">
-        <a routerLink="/home" class="nav-link active">Inicio</a>
-        <a routerLink="/inicio" class="nav-link">IA Motor</a>
+        <a routerLink="/home" class="nav-link">Inicio</a>
+        <a routerLink="/inicio" class="nav-link active">IA Motor</a>
         <a routerLink="/perfil" class="nav-link">Perfil</a>
         <a routerLink="/portafolio" class="nav-link">Portafolio</a>
       </div>
@@ -23,25 +23,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding ion-text-center">
-  <div class="profile-section">
-    <div class="photo-frame">
-      <img src="assets/icon/perfil.jpg" alt="Ing. Jorge Linares">
-    </div>
-
-    <h1 class="name-title">Ing. Jorge luis Linares</h1>
-    <h3 class="profession-subtitle">Ingeniero en Telecomunicaciones</h3>
-    
-    <p class="description-text">
-      Especialista en soluciones tecnológicas de conectividad e Inteligencia Artificial aplicada.
-    </p>
+<ion-content style="--background: #f4f4f4;">
+  <div style="width: 100%; height: 100%; overflow: hidden;">
+    <iframe 
+      src="https://jorge-linares-ia-uneti.netlify.app/" 
+      style="width: 100%; height: 100%; border: none;"
+      title="Motor de IA Jorge Linares">
+    </iframe>
   </div>
 </ion-content>
 
 <ion-footer shadow="true">
   <ion-toolbar color="light">
-    <p class="footer-text">
-      © 2026 Jorge Luis Linares - Todos los derechos reservados
+    <p style="text-align: center; font-size: 0.85rem; margin: 12px 0; color: #555;">
+      © 2026 Jorge Luis Linares - Especialista en Telecomunicaciones e IA
     </p>
   </ion-toolbar>
 </ion-footer>
