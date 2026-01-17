@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>ADMINISTRACIÓN MAESTRA DEL PORTAFOLIO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="margin-bottom: 20px;">
+    <h2 style="font-weight: bold;">Panel de Control - Ingeniería</h2>
+    <p>Seleccione un módulo para administrar contenidos, fases y reportes técnicos.</p>
+  </div>
+
+  <ion-list lines="full" style="border-radius: 8px; overflow: hidden;">
+    <ion-item *ngFor="let item of seccionesAdmin" (click)="abrirGestion(item.id)" button detail="true">
+      <ion-icon [name]="item.icono" slot="start" color="primary" style="font-size: 24px;"></ion-icon>
+      <ion-label>
+        <h2 style="font-weight: 600;">{{ item.titulo }}</h2>
+        <p>{{ item.desc }}</p>
+      </ion-label>
+      <ion-badge slot="end" [color]="item.estado === 'v2.0' ? 'success' : 'primary'">
+        {{ item.estado }}
+      </ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color="warning" style="margin-top: 30px; font-weight: bold;">
+    GENERAR REPORTE FINAL DE PROYECTO
+  </ion-button>
+</ion-content>

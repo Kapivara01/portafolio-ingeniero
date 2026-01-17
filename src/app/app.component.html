@@ -1,3 +1,36 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title slot="start">
+        <ion-img 
+          src="assets/logo-colegio.png" 
+          style="width: 40px; height: 40px; display: inline-block; vertical-align: middle;">
+        </ion-img>
+      </ion-title>
+
+      <ion-buttons slot="primary" style="justify-content: center;">
+        <ion-button routerLink="/inicio">INICIO</ion-button>
+        <ion-button routerLink="/perfil">PERFIL PROFESIONAL</ion-button>
+        <ion-button routerLink="/portafolio">PORTAFOLIO</ion-button>
+        <ion-button routerLink="/admin" color="warning" fill="solid">ADMIN</ion-button>
+      </ion-buttons>
+
+      <ion-title slot="end">
+        <ion-img 
+          src="assets/logo-universidad.png" 
+          style="width: 40px; height: 40px; display: inline-block; vertical-align: middle;">
+        </ion-img>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar color="light" class="ion-text-center">
+      <ion-note>© 2026 Jorge Luis Linares - Portafolio Ingeniero v2.1</ion-note>
+    </ion-toolbar>
+  </ion-footer>
 </ion-app>

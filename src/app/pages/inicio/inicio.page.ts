@@ -1,28 +1,21 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { 
-  IonHeader, 
-  IonToolbar, 
-  IonTitle, 
-  IonContent, 
-  IonButtons, 
-  IonFooter 
-} from '@ionic/angular/standalone'; 
-import { RouterModule } from '@angular/router'; 
+  IonHeader, IonToolbar, IonContent, IonButtons, 
+  IonButton, IonIcon, IonFooter, IonNote, IonAvatar 
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
   standalone: true,
   imports: [
-    IonHeader, 
-    IonToolbar, 
-    IonTitle, 
-    IonContent, 
-    IonButtons, 
-    IonFooter, 
-    RouterModule
-  ],
+    CommonModule, 
+    RouterModule, 
+    IonHeader, IonToolbar, IonContent, IonButtons, 
+    IonButton, IonIcon, IonFooter, IonNote, IonAvatar
+  ]
 })
 export class InicioPage {
   constructor() {}

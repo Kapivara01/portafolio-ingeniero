@@ -1,75 +1,62 @@
-<ion-header shadow="true">
-  <ion-toolbar color="primary" style="--min-height: 90px;">
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: linear-gradient(to right, #1a3a5a, #2c5282); --color: white; height: 60px;">
     <ion-buttons slot="start">
-      <div class="logo-box">
-        <img src="assets/icon/colegio.png" alt="Logo Colegio">
-      </div>
+      <ion-back-button defaultHref="/inicio" text="INICIO" style="--color: white;"></ion-back-button>
     </ion-buttons>
-
-    <ion-title>
-      <div class="nav-container">
-        <a routerLink="/home" class="nav-link">Inicio</a>
-        <a routerLink="/inicio" class="nav-link">IA Motor</a>
-        <a routerLink="/perfil" class="nav-link active">Perfil</a>
-        <a routerLink="/portafolio" class="nav-link">Portafolio</a>
-      </div>
+    <ion-title style="font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 1.1em;">
+      PERFIL PROFESIONAL
     </ion-title>
-
-    <ion-buttons slot="end">
-      <div class="logo-box">
-        <img src="assets/icon/universidad.png" alt="Logo Universidad">
-      </div>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div style="max-width: 800px; margin: 0 auto;">
-    
-    <div style="text-align: center; margin: 30px 0;">
-      <h1 style="font-weight: 800; color: #222; letter-spacing: 1px;">PERFIL PROFESIONAL</h1>
-      <div style="width: 100px; height: 4px; background: #3880ff; margin: 10px auto; border-radius: 10px;"></div>
+  <div style="max-width: 900px; margin: 50px auto 0 auto;">
+
+    <div *ngIf="!mostrarLector">
+      <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
+        <ion-button (click)="activarLector()" style="width: 280px; height: 55px; font-weight: bold; --background: #2c5282; --border-radius: 8px;">
+          LEER HOJA DE VIDA AQUÍ
+        </ion-button>
+        <ion-button (click)="enviarEmail()" color="success" style="width: 280px; height: 55px; font-weight: bold; --border-radius: 8px;">
+          SOLICITAR POR CORREO
+        </ion-button>
+      </div>
+
+      <ion-card style="border-left: 10px solid #1a3a5a; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <ion-card-content style="padding: 35px;">
+          <h2 style="color: #1a3a5a; font-weight: 800; font-size: 1.5em; margin-bottom: 15px;">SÍNTESIS PROFESIONAL</h2>
+          <p style="text-align: justify; line-height: 1.8; font-size: 1.25em; color: #333;">
+            Ingeniero con amplia trayectoria en la convergencia de las <strong>Telecomunicaciones y la Informática</strong>, especializado en el desarrollo de soluciones integrales y gestión de proyectos tecnológicos de alto impacto.
+          </p>
+        </ion-card-content>
+      </ion-card>
     </div>
 
-    <ion-card style="margin-bottom: 25px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.08);">
-      <ion-card-content style="font-size: 1.2rem; line-height: 1.8; color: #333; text-align: justify;">
-        <p>
-          <strong>Ingeniero en Telecomunicaciones</strong> con una trayectoria destacada en la planificación y ejecución de infraestructuras críticas de conectividad. Mi enfoque profesional combina la solidez de la ingeniería tradicional con la vanguardia tecnológica, especializándome en la arquitectura de <strong>Redes GPON</strong> y la integración de soluciones de <strong>Inteligencia Artificial</strong> para la optimización de procesos.
-        </p>
-        <p style="margin-top: 15px;">
-          Experto en la gestión de proyectos bajo metodologías ágiles, garantizando el éxito mediante el control riguroso de <strong>fases y sprints</strong>. Mi objetivo es transformar desafíos técnicos en ventajas competitivas, asegurando sistemas robustos, escalables y eficientes.
-        </p>
-      </ion-card-content>
-    </ion-card>
+    <div *ngIf="mostrarLector">
+      <ion-button (click)="desactivarLector()" fill="solid" color="dark" style="margin-bottom: 15px; font-weight: bold;">
+        <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+        VOLVER A PERFIL
+      </ion-button>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px;">
-      <ion-badge color="primary" style="padding: 12px; font-size: 0.9rem;">Redes Convergentes</ion-badge>
-      <ion-badge color="primary" style="padding: 12px; font-size: 0.9rem;">Modelado de IA</ion-badge>
-      <ion-badge color="primary" style="padding: 12px; font-size: 0.9rem;">Gestión Ágil (Scrum)</ion-badge>
-      <ion-badge color="tertiary" style="padding: 12px; font-size: 0.9rem;">Redes GPON / FTTH</ion-badge>
-    </div>
-
-    <div style="background: #ffffff; padding: 30px; border-radius: 20px; border: 1px solid #e0e0e0; text-align: center;">
-      <h3 style="font-weight: bold; margin-bottom: 20px;">Contacto y Documentación</h3>
+      <div style="background: #1a3a5a; color: white; text-align: center; padding: 10px; border-radius: 8px 8px 0 0; font-size: 0.9em; font-weight: bold;">
+        MODO LECTURA PROTEGIDA
+      </div>
       
-      <ion-button expand="block" color="success" style="--border-radius: 10px; height: 50px; margin-bottom: 15px;" href="assets/archivo_x.pdf" download="CV_Jorge_Linares.pdf">
-        <ion-icon name="download-outline" slot="start"></ion-icon>
-        Descargar Hoja de Vida Completa
-      </ion-button>
-
-      <ion-button expand="block" fill="outline" style="--border-radius: 10px; height: 50px;" (click)="enviarCorreo()">
-        <ion-icon name="mail-outline" slot="start"></ion-icon>
-        Solicitar Entrevista Técnica
-      </ion-button>
+      <div style="position: relative; width: 100%; height: 65vh; border: 2px solid #1a3a5a; border-radius: 0 0 8px 8px; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;" oncontextmenu="return false;"></div>
+        <embed src="assets/archivo_x.pdf#toolbar=0" type="application/pdf" width="100%" height="100%">
+      </div>
     </div>
-
   </div>
 </ion-content>
 
-<ion-footer shadow="true">
-  <ion-toolbar color="light">
-    <p style="text-align: center; font-size: 0.85rem; margin: 12px 0; color: #555;">
-      © 2026 Jorge Luis Linares - Especialista en Telecomunicaciones e IA
+<ion-footer class="ion-no-border">
+  <div style="background: linear-gradient(to right, #1a3a5a, #2c5282); padding: 15px 0; text-align: center;">
+    <p style="margin: 0; font-size: 0.85em; color: #ffffff; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;">
+      PORTAFOLIO DE INGENIERÍA
     </p>
-  </ion-toolbar>
+    <p style="margin: 4px 0 0 0; font-size: 0.65em; color: #cbd5e0; font-weight: 400;">
+      © 2026 Telecomunicaciones & Informática
+    </p>
+  </div>
 </ion-footer>
