@@ -1,0 +1,10 @@
+ion-content {
+  --background: #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  iframe {
+    flex: 1;
+    display: block;
+  }
+}
