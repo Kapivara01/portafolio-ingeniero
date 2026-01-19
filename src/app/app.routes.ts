@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   { 
     path: '', 
-    redirectTo: 'inicio', // <--- Cambiado de 'portafolio' a 'inicio'
+    redirectTo: 'inicio', 
     pathMatch: 'full' 
   },
   {
@@ -21,6 +21,12 @@ export const routes: Routes = [
   {
     path: 'ia-motor',
     loadComponent: () => import('./pages/ia-motor/ia-motor.page').then(m => m.IaMotorPage),
+  },
+  {
+    path: 'admin-dashboard',
+    loadComponent: () => 
+      import('./pages/admin-dashboard/dashboard-home/dashboard-home.component')
+        .then(m => m.DashboardHomeComponent),
   },
   { 
     path: '**', 
