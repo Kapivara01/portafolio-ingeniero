@@ -1,35 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { addIcons } from 'ionicons';
-import { wifiOutline, buildOutline, checkmarkDoneCircleOutline, timeOutline } from 'ionicons/icons';
+import { RouterModule } from '@angular/router'; // IMPORTANTE
 
 @Component({
   selector: 'app-portafolio',
   templateUrl: './portafolio.page.html',
   styleUrls: ['./portafolio.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule]
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule] // AÑADIR RouterModule AQUÍ
 })
-export class PortafolioPage {
-  // Datos exactos para que tu HTML no falle
+export class PortafolioPage implements OnInit {
+  // Datos de ejemplo para tus Sprints de Ingeniería
   especialidades = [
-    { 
-      nombre: 'Redes GPON / FTTH', 
-      icono: 'wifi-outline',
+    {
+      nombre: 'Redes GPON / FTTH',
+      icono: 'wifi',
       fases: [
-        { 
-          titulo: 'Despliegue de Red', 
+        {
+          titulo: 'Despliegue de Red',
           sprints: [
             { nombre: 'Sprint 1', tarea: 'Levantamiento de planta externa', estado: 'Completado' },
-            { nombre: 'Sprint 2', tarea: 'Fusión de hilos y pruebas de potencia', estado: 'En Progreso' }
-          ] 
+            { nombre: 'Sprint 2', tarea: 'Fusión de hilos y pruebas de potencia', estado: 'En proceso' }
+          ]
         }
-      ] 
+      ]
     }
   ];
 
-  constructor() {
-    addIcons({ wifiOutline, buildOutline, checkmarkDoneCircleOutline, timeOutline });
-  }
+  constructor() { }
+
+  ngOnInit() { }
 }

@@ -1,25 +1,23 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { 
-  IonContent, IonHeader, IonToolbar, IonButtons, 
-  IonButton, IonFooter, IonTitle, IonThumbnail, IonText 
-} from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router'; // IMPORTANTE
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-ia-motor',
   templateUrl: './ia-motor.page.html',
   styleUrls: ['./ia-motor.page.scss'],
   standalone: true,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], // <-- Esto evita que la página se vaya a blanco por etiquetas desconocidas
-  imports: [
-    CommonModule, FormsModule, RouterModule,
-    IonContent, IonHeader, IonToolbar, IonButtons, 
-    IonButton, IonFooter, IonTitle, IonThumbnail, IonText
-  ]
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule] // AÑADIR RouterModule AQUÍ
 })
 export class IaMotorPage implements OnInit {
-  constructor() { }
+  urlMotor: SafeResourceUrl;
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.urlMotor = this.sanitizer.bypassSecurityTrustResourceUrl('https://jorge-linares-ia-uneti.netlify.app/');
+  }
+
   ngOnInit() { }
 }

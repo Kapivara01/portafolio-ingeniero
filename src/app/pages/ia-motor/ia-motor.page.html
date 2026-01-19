@@ -1,35 +1,43 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-thumbnail slot="start" class="ion-margin-start">
-      <img src="assets/img/logo-colegio.png" alt="Colegio de Ingenieros">
-    </ion-thumbnail>
-
-    <ion-buttons slot="primary" class="header-menu">
-      <ion-button routerLink="/inicio">INICIO</ion-button>
-      <ion-button routerLink="/perfil">PERFIL PROFESIONAL</ion-button>
-      <ion-button routerLink="/portafolio">PORTAFOLIO</ion-button>
-      <ion-button routerLink="/ia-motor" class="active-link">IA MOTOR</ion-button>
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #1b3a61; color: white; height: 65px;">
+    <ion-buttons slot="start">
+      <div style="width: 60px; text-align: center;">
+        <img src="assets/icon/logo-colegio.png" style="height: 35px;" onerror="this.style.opacity='0'">
+      </div>
     </ion-buttons>
 
-    <ion-thumbnail slot="end" class="ion-margin-end">
-      <img src="assets/img/logo-universidad.png" alt="Universidad">
-    </ion-thumbnail>
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+      <ion-button fill="clear" style="--color: white; font-size: 0.75rem;" routerLink="/inicio">INICIO</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.75rem;" routerLink="/perfil">PERFIL</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.75rem;" routerLink="/portafolio">PORTAFOLIO</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.75rem; border-bottom: 2px solid white;" routerLink="/ia-motor">IA MOTOR</ion-button>
+    </div>
+
+    <ion-buttons slot="end">
+      <div style="width: 60px; text-align: center;">
+        <img src="assets/icon/logo-universidad.png" style="height: 35px;" onerror="this.style.opacity='0'">
+      </div>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-no-padding">
-  <iframe 
-    src="https://jorge-linares-ia-uneti.netlify.app/" 
-    style="width: 100%; height: calc(100% - 40px); border: none;"
-    title="Asistente IA">
-  </iframe>
+<ion-content style="--background: #22414d; --overflow: hidden;">
+  <div style="width: 100%; height: 100%; padding: 10px; display: flex; justify-content: center;">
+    
+    <div style="width: 100%; height: 100%; background: #ffffff; border-radius: 15px; overflow: hidden; position: relative;">
+      <iframe 
+        [src]="urlMotor" 
+        style="width: 100%; height: 100%; border: none;"
+        allow="clipboard-read; clipboard-write; microphone; camera">
+      </iframe>
+    </div>
+
+  </div>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar color="primary" class="ion-text-center">
-    <ion-text>
-      <p>PORTAFOLIO DE INGENIERÍA</p>
-      <small>© 2026 Jorge Luis Linares - Telecomunicaciones & Informática</small>
-    </ion-text>
-  </ion-toolbar>
+<ion-footer class="ion-no-border">
+  <div style="background: #1b3a61; color: white; text-align: center; padding: 10px;">
+    <p style="margin: 0; font-size: 0.85rem; font-weight: bold;">PORTAFOLIO DE INGENIERÍA</p>
+    <span style="font-size: 0.65rem; color: #cbd5e0;">© 2026 Jorge Luis Linares - Telecomunicaciones & Informática</span>
+  </div>
 </ion-footer>

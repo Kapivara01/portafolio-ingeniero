@@ -1,65 +1,51 @@
-<ion-header shadow="true">
-  <ion-toolbar color="primary" style="--min-height: 90px;">
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #1b3a61;">
     <ion-buttons slot="start">
-      <div class="logo-box"><img src="assets/icon/colegio.png"></div>
-    </ion-buttons>
-    <ion-title>
-      <div class="nav-container">
-        <a routerLink="/home" class="nav-link">Inicio</a>
-        <a routerLink="/inicio" class="nav-link">IA Motor</a>
-        <a routerLink="/perfil" class="nav-link">Perfil</a>
-        <a routerLink="/portafolio" class="nav-link active">Portafolio</a>
+      <div style="padding: 5px;">
+        <img src="assets/icon/logo-colegio.png" alt="Logo Colegio" style="height: 40px;">
       </div>
-    </ion-title>
+    </ion-buttons>
+
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+      <ion-button fill="clear" style="--color: white; font-size: 0.8rem;" routerLink="/inicio">INICIO</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.8rem;" routerLink="/perfil">PERFIL</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.8rem; border-bottom: 2px solid white;" routerLink="/portafolio">PORTAFOLIO</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.8rem;" routerLink="/ia-motor">IA MOTOR</ion-button>
+    </div>
+
     <ion-buttons slot="end">
-      <div class="logo-box"><img src="assets/icon/universidad.png"></div>
+      <div style="padding: 5px;">
+        <img src="assets/icon/logo-universidad.png" alt="Logo Universidad" style="height: 40px;">
+      </div>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div style="max-width: 900px; margin: 0 auto;">
-    
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h1 style="font-weight: 800; color: #222;">GESTIÓN DE PROYECTOS</h1>
-      <p style="color: #666;">Seguimiento técnico por especialidad y metodología Sprint</p>
+  <div style="text-align: center; margin-top: 15px;">
+    <h2 style="color: #1b3a61; font-weight: bold;">GESTIÓN DE PROYECTOS</h2>
+    <p>Seguimiento técnico por especialidad y metodología Sprint</p>
+  </div>
+
+  <div *ngFor="let esp of especialidades" style="max-width: 800px; margin: 0 auto; margin-bottom: 30px;">
+    <div style="display: flex; align-items: center; border-bottom: 2px solid #1b3a61; margin-bottom: 10px;">
+      <ion-icon [name]="esp.icono" style="font-size: 2rem; color: #3880ff; margin-right: 10px;"></ion-icon>
+      <h3 style="font-weight: bold; margin: 0;">{{ esp.nombre }}</h3>
     </div>
-
-    <div *ngFor="let esp of especialidades" style="margin-bottom: 50px;">
-      
-      <div style="display: flex; align-items: center; border-bottom: 3px solid #3880ff; padding-bottom: 10px; margin-bottom: 20px;">
-        <ion-icon [name]="esp.icono" style="font-size: 2.5rem; color: #3880ff; margin-right: 15px;"></ion-icon>
-        <h2 style="font-weight: bold; margin: 0; text-transform: uppercase; color: #222;">{{ esp.nombre }}</h2>
+    
+    <div *ngFor="let fase of esp.fases" style="background: #f4f4f4; padding: 15px; border-radius: 10px; margin-top: 10px;">
+      <h4 style="margin: 0 0 10px 0; color: #1b3a61;">{{ fase.titulo }}</h4>
+      <div *ngFor="let sprint of fase.sprints" style="display: flex; justify-content: space-between; background: white; padding: 10px; border-radius: 8px; margin-bottom: 5px; border-left: 5px solid #1b3a61;">
+        <span><strong>{{ sprint.nombre }}:</strong> {{ sprint.tarea }}</span>
+        <ion-badge [color]="sprint.estado === 'Completado' ? 'success' : 'warning'">{{ sprint.estado }}</ion-badge>
       </div>
-
-      <div *ngFor="let fase of esp.fases" style="margin-left: 20px; margin-bottom: 30px;">
-        <h3 style="color: #555; font-weight: 600;">
-          <ion-icon name="caret-forward-outline" style="vertical-align: middle;"></ion-icon> 
-          {{ fase.titulo }}
-        </h3>
-
-        <ion-card *ngFor="let sprint of fase.sprints" style="margin: 10px 0; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-          <ion-item lines="none">
-            <ion-label>
-              <h2 style="font-weight: bold; color: #3880ff;">{{ sprint.nombre }}</h2>
-              <p style="color: #444; font-size: 1rem;">{{ sprint.tarea }}</p>
-            </ion-label>
-            <ion-badge [color]="sprint.estado === 'Completado' ? 'success' : (sprint.estado === 'En Progreso' ? 'warning' : 'medium')" slot="end">
-              <ion-icon [name]="sprint.estado === 'Completado' ? 'checkmark-circle' : 'timer-outline'" style="margin-right: 5px; vertical-align: middle;"></ion-icon>
-              {{ sprint.estado }}
-            </ion-badge>
-          </ion-item>
-        </ion-card>
-      </div>
-
     </div>
   </div>
 </ion-content>
 
-<ion-footer shadow="true">
-  <ion-toolbar color="light">
-    <p style="text-align: center; font-size: 0.85rem; margin: 12px 0; color: #777;">
-      © 2026 Jorge Luis Linares - Portafolio Administrable v2.0
-    </p>
-  </ion-toolbar>
+<ion-footer class="ion-no-border">
+  <div style="background: #1b3a61; color: white; text-align: center; padding: 10px;">
+    <p style="margin: 0; font-weight: bold;">PORTAFOLIO DE INGENIERÍA</p>
+    <span style="font-size: 0.7rem;">© 2026 Jorge Luis Linares - Telecomunicaciones & Informática</span>
+  </div>
 </ion-footer>

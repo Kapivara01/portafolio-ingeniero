@@ -1,10 +1,10 @@
-ion-content {
-  --background: #ffffff;
+:host {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  background: #22414d; // Color oscuro para evitar el fondo blanco
+}
 
-  iframe {
-    flex: 1;
-    display: block;
-  }
+ion-content {
+  --background: #22414d;
 }

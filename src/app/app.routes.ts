@@ -1,7 +1,11 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { 
+    path: '', 
+    redirectTo: 'portafolio', 
+    pathMatch: 'full' 
+  },
   {
     path: 'inicio',
     loadComponent: () => import('./pages/inicio/inicio.page').then(m => m.InicioPage),
@@ -15,8 +19,15 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/portafolio/portafolio.page').then(m => m.PortafolioPage),
   },
   {
+    path: 'ia-motor', // <--- DEBE coincidir con el routerLink del HTML
+    loadComponent: () => import('./pages/ia-motor/ia-motor.page').then(m => m.IaMotorPage),
+  },
+  {
     path: 'admin',
     loadComponent: () => import('./pages/admin-dashboard/dashboard-home/dashboard-home.component').then(m => m.DashboardHomeComponent),
   },
-  { path: '**', redirectTo: 'inicio' }
-]; // <-- Asegúrate de que esta llave y corchete existan
+  { 
+    path: '**', 
+    redirectTo: 'inicio' // Si el click te manda aquí, es porque la ruta de arriba falló
+  }
+];
