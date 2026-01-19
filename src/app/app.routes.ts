@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   { 
     path: '', 
-    redirectTo: 'portafolio', 
+    redirectTo: 'inicio', // <--- Cambiado de 'portafolio' a 'inicio'
     pathMatch: 'full' 
   },
   {
@@ -19,15 +19,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/portafolio/portafolio.page').then(m => m.PortafolioPage),
   },
   {
-    path: 'ia-motor', // <--- DEBE coincidir con el routerLink del HTML
+    path: 'ia-motor',
     loadComponent: () => import('./pages/ia-motor/ia-motor.page').then(m => m.IaMotorPage),
-  },
-  {
-    path: 'admin',
-    loadComponent: () => import('./pages/admin-dashboard/dashboard-home/dashboard-home.component').then(m => m.DashboardHomeComponent),
   },
   { 
     path: '**', 
-    redirectTo: 'inicio' // Si el click te manda aquí, es porque la ruta de arriba falló
+    redirectTo: 'inicio' 
   }
 ];
