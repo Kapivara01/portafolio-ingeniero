@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #1b3a61; color: white; height: 65px;">
+    <ion-buttons slot="start">
+      <div style="width: 60px; text-align: center; display: flex; justify-content: center;">
+        <img src="assets/icon/logo-colegio.png" style="height: 35px; width: auto;" onerror="this.style.opacity='0'">
+      </div>
+    </ion-buttons>
+
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+      <ion-button fill="clear" style="--color: white; font-size: 0.75rem;" routerLink="/inicio">INICIO</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.75rem;" routerLink="/perfil">PERFIL</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.75rem; border-bottom: 2px solid white;" routerLink="/portafolio">PORTAFOLIO</ion-button>
+      <ion-button fill="clear" style="--color: white; font-size: 0.75rem;" routerLink="/ia-motor">IA MOTOR</ion-button>
+    </div>
+
+    <ion-buttons slot="end">
+      <div style="width: 60px; text-align: center; display: flex; justify-content: center;">
+        <img src="assets/icon/logo-universidad.png" style="height: 35px; width: auto;" onerror="this.style.opacity='0'">
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" style="--background: #fdfdfd;">
+  <div style="text-align: center; margin-top: 15px;">
+    <h2 style="color: #1b3a61; font-weight: bold; margin-bottom: 5px;">GESTIÓN DE PROYECTOS</h2>
+    <p style="color: #666; font-size: 0.9rem;">Seguimiento técnico por especialidad y metodología Sprint</p>
+  </div>
+
+  <div *ngFor="let esp of especialidades" style="max-width: 850px; margin: 0 auto; margin-bottom: 30px; padding: 10px;">
+    <div style="display: flex; align-items: center; border-bottom: 2px solid #1b3a61; margin-bottom: 15px; padding-bottom: 5px;">
+      <ion-icon [name]="esp.icono" style="font-size: 1.8rem; color: #3880ff; margin-right: 12px;"></ion-icon>
+      <h3 style="font-weight: bold; margin: 0; color: #1b3a61; text-transform: uppercase;">{{ esp.nombre }}</h3>
+    </div>
+    
+    <div *ngFor="let fase of esp.fases" style="background: #f4f7f9; padding: 18px; border-radius: 12px; margin-top: 10px; border: 1px solid #e0e6ed;">
+      <h4 style="margin: 0 0 15px 0; color: #2c5282; font-size: 1.1rem; border-left: 4px solid #3880ff; padding-left: 10px;">{{ fase.titulo }}</h4>
+      
+      <div *ngFor="let sprint of fase.sprints" style="display: flex; justify-content: space-between; align-items: center; background: white; padding: 12px; border-radius: 8px; margin-bottom: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <span style="font-size: 0.95rem;"><strong>{{ sprint.nombre }}:</strong> {{ sprint.tarea }}</span>
+        <ion-badge [color]="sprint.estado === 'Completado' ? 'success' : 'warning'" style="padding: 6px 12px; border-radius: 6px;">
+          {{ sprint.estado }}
+        </ion-badge>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div style="background: #1b3a61; color: white; text-align: center; padding: 12px;">
+    <p style="margin: 0; font-size: 0.85rem; font-weight: bold;">PORTAFOLIO DE INGENIERÍA</p>
+    <span style="font-size: 0.65rem; color: #cbd5e0;">© 2026 Jorge Luis Linares - Telecomunicaciones & Informática</span>
+  </div>
+</ion-footer>

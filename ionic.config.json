@@ -1,0 +1,7 @@
+{
+  "name": "portafolio-ingeniero",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header-ingeniero">
+    <ion-title class="title-header">ADMINISTRACIÓN MAESTRA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="main-container">
+    
+    <div style="margin-bottom: 25px;">
+      <h2 style="color: #1a3a5a; font-weight: 800; font-size: 1.6rem; margin: 0;">Panel de Control - Ingeniería</h2>
+      <p style="color: #666; font-size: 1.1rem;">Seleccione un módulo para administrar contenidos, fases y reportes técnicos.</p>
+    </div>
+
+    <ion-list lines="none" style="background: transparent;">
+      <ion-item *ngFor="let item of seccionesAdmin" 
+                (click)="abrirGestion(item.id)" 
+                button 
+                detail="true" 
+                class="card-sintesis" 
+                style="margin-bottom: 15px; --padding-start: 15px; border-radius: 12px;">
+        
+        <ion-icon [name]="item.icono" slot="start" style="color: #1a3a5a; font-size: 28px;"></ion-icon>
+        
+        <ion-label style="margin-left: 10px;">
+          <h2 style="font-weight: 700; color: #1a3a5a;">{{ item.titulo }}</h2>
+          <p style="font-size: 0.95em;">{{ item.desc }}</p>
+        </ion-label>
+        
+        <ion-badge slot="end" [color]="item.estado === 'v2.0' ? 'success' : 'primary'" style="font-weight: bold;">
+          {{ item.estado }}
+        </ion-badge>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" class="btn-cv-base btn-azul" style="width: 100%; margin-top: 20px;">
+      <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
+      GENERAR REPORTE FINAL DE PROYECTO
+    </ion-button>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer-ingeniero">
+    <p style="margin: 0; font-size: 0.85em; color: #ffffff; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;">
+      SISTEMA DE GESTIÓN - PORTAFOLIO
+    </p>
+    <p style="margin: 4px 0 0 0; font-size: 0.65em; color: #cbd5e0; font-weight: 400;">
+      © 2026 Jorge Luis Linares - Telecomunicaciones & Informática
+    </p>
+  </div>
+</ion-footer>

@@ -1,0 +1,95 @@
+// Contenedor para los logos del header
+.logo-box {
+  background: white;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px; // Bordes redondeados profesionales
+  margin: 0 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  img {
+    width: 85%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+// Estilos para el menú central
+.nav-container {
+  display: flex; 
+  justify-content: center; 
+  gap: 20px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s ease;
+
+  &.active {
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
+
+// Estilos del cuerpo (Profile Section)
+.profile-section {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-frame {
+  border: 5px solid #3880ff;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.name-title {
+  margin-top: 25px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #222;
+}
+
+.profession-subtitle {
+  color: #666;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.description-text {
+  max-width: 350px;
+  margin: 25px auto;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 12px 0;
+  color: #555;
+}
